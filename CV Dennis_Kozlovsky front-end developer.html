@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Резюме соискателя должности front-end разработчика">
+    <meta name="keywords" content="CV, front-end, frontend, фронтэнд, html, css, javascript">
+    <link
+      rel="shortcut icon"
+      img src="" alt="favicon"
+      type="image/x-icon"
+    />
+  
+     <style type="text/css">
+ @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100;400;500;700;900&display=swap");
+* {
+    font-family: "Alegreya Sans SC", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1rem;
+}
+html,
+body {
+    background: rgb(199 199 199 / 74%);
+    margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+    margin: 0;
+    text-shadow: 1px 2px 2px rgb(255, 255, 255);
+}
+li {
+    list-style-type: none; /* Убираем маркеры у списка */
+}
+li::marker {
+    margin-right: 5px;
+    content: url(https://img.icons8.com/small/10/sphere.png);
+}
+li h3,
+h4 {
+    padding-left: 5px;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+h4 {
+    font-size: 0.85rem;
+}
+summary,
+h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #f5f5f5bf;
+    text-shadow: 1px 2px 2px rgb(0, 0, 0);
+}
+body {
+    height: 1350px;
+}
+
+.container {
+    overflow: hidden;
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 20px;
+    top: 5%;
+    left: 25%;
+    bottom: 5%;
+    display: flex;
+    width: 900px;
+    min-height: 1200px;
+    box-shadow: -5px -5px 40px 6px rgba(255, 255, 255, 1) inset,
+        19px 25px 13px -2px rgba(34, 60, 80, 0.441),
+        19px 13px 100px -20px rgba(34, 60, 80, 0.2),
+        19px 25px 100px -15px rgba(85, 135, 173, 0.461);
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 300px;
+    min-height: 100vh;
+    background-color: rgb(151, 151, 151);
+    padding: 2%;
+}
+.round {
+    position: absolute;
+    width: 295px;
+    height: 295px;
+    border-radius: 50%;
+    border: 4px solid rgb(111, 111, 111);
+    top: 27px;
+    left: 10px;
+    box-shadow: 0px 0px 58px 19px rgba(255, 255, 255, 0.7);
+}
+.about-myself {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+.contacts {
+    height: 25%;
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    transform: scale(1);
+}
+.contacts a {
+    color: whitesmoke;
+    text-shadow: 1px 2px 2px rgb(0, 0, 0);
+}
+
+.contact-data {
+    padding-bottom: 10px;
+}
+.contacts h3 {
+    padding-bottom: 5px;
+    padding-top: 3px;
+}
+.about-myself {
+    margin-top: 10%;
+}
+
+.about-myself p {
+    font-size: 1.1rem;
+    color: whitesmoke;
+    text-shadow: 1px 2px 2px rgb(0, 0, 0);
+}
+
+.qualification-info {
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 600px;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.893);
+    padding: 2% 0px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    color: #394a56;
+}
+
+.label-text {
+    padding-right: 10px;
+    margin-left: 16px;
+}
+
+.toggle {
+    isolation: isolate;
+    position: relative;
+    height: 20px;
+    width: 45px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6,
+        4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
+}
+.bold {
+    font-weight: bold;
+}
+
+.toggle-state {
+    display: none;
+}
+
+.indicator {
+    height: 100%;
+    width: 200%;
+    background: rgb(151, 151, 151);
+    border-radius: 15px;
+    transform: translate3d(-75%, 0, 0);
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+}
+
+.toggle-state:checked ~ .indicator {
+    transform: translate3d(25%, 0, 0);
+}
+
+#about-me-title {
+    padding-bottom: 10px;
+}
+.photo {
+    height: 30%;
+}
+.avatar {
+    height: 280px;
+    width: 280px;
+    padding-top: 2%;
+}
+
+.avatar svg {
+    width: 100%;
+    border-radius: 50%;
+}
+.avatar image:hover {
+    scale: (0.5);
+    cursor: grab;
+}
+.my-name {
+    padding: 20px;
+}
+#my-name,
+#my-surname {
+    font-size: 5rem;
+    text-shadow: -3px 1px 4px rgb(171, 171, 171);
+}
+
+#speciality {
+    font-size: 2.5rem;
+}
+
+.speciality,
+.education,
+.work-experience {
+    border-bottom: 1px solid black;
+    padding: 2% 0px;
+    width: 95%;
+}
+.speciality,
+.education,
+.work-experience,
+.skills {
+    margin-left: 2%;
+    width: 90%;
+}
+.skill {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.period,
+.working-period {
+    text-decoration: underline;
+    font-style: italic;
+}
+.qualification-info ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.work-experience {
+    height: auto;
+    justify-content: center;
+}
+#skills {
+    padding: 10px 0;
+}
+.speciality li,
+.education li,
+.work-experience li {
+    padding-top: 7px;
+}
+
+  </style>
+    <title>CV Dennis Kozlovsky front-end developer</title>
+  </head>
+  <body>
+    <section class="container">
+      <section class="main-info">
+        <div class="photo">
+          <div class="avatar">
+            <svg height="280" width="280" viewbox="0 0 320 320">
+              <image
+                xlink:href="data:image/jpeg;base64,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"
+              />
+            </svg>
+          </div>
+          <div class="round"></div>
+        </div>
+        <div class="contacts">
+          <h2 class="contact-data">Контактные данные:</h2>
+          <div>
+            <h3 id="phone-number">Телефон:</h3>
+            <p>
+              <a href="tel:+375291196583">+375(29)119-65-83</a>
+            </p>
+          </div>
+          <div>
+            <h3 id="email">Email:</h3>
+            <p>
+              <a href="mailto:dennis_kozlovsky@yahoo.com"
+                >dennis_kozlovsky@yahoo.com</a
+              >
+            </p>
+          </div>
+          <div>
+            <h3 id="linkedIn">LinkedIn:</h3>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/dennis-kozlovsky-ab7b3324b/"
+                target="_blank"
+                >linkedin.com/in/dennis-kozlovsky-ab7b3324b</a
+              >
+            </p>
+          </div>
+          <div>
+            <h3 id="skype">Skype:</h3>
+            <p>
+              <a href="Skype:?chat">live:.cid.9f0ac75302a7b70f</a>
+            </p>
+          </div>
+
+          <div>
+            <h3 id="github">GitHub:</h3>
+            <p>
+              <a href="https://github.com/Dennis88113" target="_blank">
+                Dennis88113
+              </a>
+            </p>
+          </div>
+        </div>
+        <details class="about-myself" open>
+          <summary id="about-me-title">О себе:</summary>
+          <p id="about-me-text">
+            Начинающий Front-End разработчик с опытом работы в банковской сфере.
+            Отлично умею концентрироваться на поставленных задачах, стремлюсь
+            узучать новую информацию в сфере разработки. В настоящее время
+            работаю над собственным проектом и изучаю javascript-фреймворк Vue.
+          </p>
+        </details>
+      </section>
+      <section class="qualification-info">
+        <label class="label">
+          <div class="label-text bold">Русский</div>
+
+          <div class="toggle">
+            <input
+              class="toggle-state"
+              type="checkbox"
+              name="check"
+              value="check"
+            />
+            <div class="indicator"></div>
+          </div>
+          <div class="label-text">English</div>
+        </label>
+
+        <div class="my-name">
+          <div class="name"><h1 id="my-name">Денис</h1></div>
+          <div class="surname"><h1 id="my-surname">Козловский</h1></div>
+        </div>
+        <div class="speciality">
+          <h2 id="speciality">Фронтенд-разработчик</h2>
+        </div>
+        <div class="education">
+          <h2 id="education">Образование:</h2>
+          <ul>
+            <li>
+              <div class="educational-institution"><h3>It-Academy</h3></div>
+              <div class="period">
+                <h4 id="period-it-academy">март 2022 – сентябрь 2022</h4>
+              </div>
+              <div class="specialty-studied">
+                <h4 id="specialty-studied-it-academy">
+                  Курсы: разработка веб-сайтов с использованием HTML, CSS и
+                  JavaScript, разработка веб-приложений на JavaScript
+                </h4>
+              </div>
+            </li>
+            <li>
+              <div class="educational-institution">
+                <h3 id="educational-institution-pac">
+                  Академия управления при Президенте Республики Беларусь
+                </h3>
+              </div>
+              <div class="period">
+                <h4 id="period-pac">ноябрь 2014 – июнь 2018</h4>
+              </div>
+              <div class="specialty-studied">
+                <h4 id="specialty-studied-pac">Специальность: молодой исследователь</h4>
+              </div>
+            </li>
+            <li>
+              <div class="educational-institution">
+                <h3 class="educational-institution-belsut">
+                  УО «Белорусский государственный университет транспорта»
+                </h3>
+              </div>
+              <div class="period">
+                <h4 id="period-magistracy">сентябрь 2012 – июнь 2014</h4>
+              </div>
+              <div class="specialty-studied">
+                <h4 id="specialty-studied-magistracy">
+                  Специальность: Магистр экономических наук
+                </h4>
+              </div>
+            </li>
+            <li>
+              <div class="educational-institution">
+                <h3 class="educational-institution-belsut">
+                  УО «Белорусский государственный университет транспорта»
+                </h3>
+              </div>
+              <div class="period">
+                <h4 id="period-belsut">сентябрь 2007 – июнь 2012</h4>
+              </div>
+              <div class="specialty-studied">
+                <h4 id="specialty-studied-belsut">
+                  Специальность: бухгалтерский учет, анализ и аудит
+                </h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="work-experience">
+          <h2 id="work-experience">Опыт работы:</h2>
+          <ul>
+            <li>
+              <div class="workplace"><h3>It-Academy</h3></div>
+              <div class="post">
+                <h4 id="post-it-academy">Frontend-разработчик (обучение)</h4>
+              </div>
+              <div class="working-period">
+                <h4 id="working-period-it-academy">
+                  июль 2022 – сентябрь 2022
+                </h4>
+              </div>
+              <div class="function">
+                <h4 id="function-it-academy">
+                  разработка своего проекта (сайт – приложение для кафе)
+                  адаптивная верстка сайта с добавление анимационных эффектов,
+                  сайт имеет функционал интернет-магазина, страницу отзывов,
+                  работает с базой данных Firebase. Работа по усовершенствованию
+                  проекта продолжается(добавление пагинации, добавление
+                  &lt;meta&gt; для оптимизации SEO, подключение платежной
+                  системы)
+                </h4>
+              </div>
+            </li>
+
+            <li>
+              <div class="workplace">
+                <h3 id="workplace-pre-head">ОАО «Белагропромбанк»</h3>
+              </div>
+              <div class="post">
+                <h4 id="pre-head">
+                  – заместитель начальника отдела инкассаторско-кассового
+                  обслуживания
+                </h4>
+              </div>
+              <div class="working-period">
+                <h4 id="working-period-pre-head">июль 2019 – февраль 2022</h4>
+              </div>
+              <div class="function">
+                <h4 id="pre-head-functions">
+                  организация работы по инкассаторско-кассовому обслуживанию:
+                  контроль исполнения должностных обязанностей сотрудниками
+                  отдела, заключение договоров с обслуживаемыми организациями,
+                  выставление счетов для оплаты за обслуживание и др.)
+                </h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills">
+          <h2 id="skills">Навыки:</h2>
+          <ul>
+            <li>
+              <p class="skill">
+                Высокий уровень знания HTML, CSS, JavaScript, CSS-фреймворков:
+                Bootstrap, Material Design, работа с базой данных Firebase,
+                сторонними Api;
+              </p>
+            </li>
+            <li>
+              <p class="skill">Адаптивная и кроссбраузерная верстка;</p>
+            </li>
+            <li><p class="skill">Тестирование и отладка веб-сайтов;</p></li>
+            <li><p class="skill">Работа Git</p></li>
+            <li>
+              <p class="skill">
+                Уровень владения английским языком - средний(В1)
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+<script type="text/javascript">
+  const container = document.querySelector(".container");
+const toggle = document.querySelector(".toggle-state");
+const contactData = document.querySelector(".contact-data");
+const phoneNumber = document.querySelector("#phone-number");
+const aboutMe = document.querySelector("#about-me-title");
+const aboutMeText = document.querySelector("#about-me-text");
+const labelText = document.querySelectorAll(".label-text");
+const myName = document.querySelector("#my-name");
+const mySurname = document.querySelector("#my-surname");
+const speciality = document.querySelector("#speciality");
+const education = document.querySelector("#education");
+const periodInItAcademy = document.querySelector("#period-it-academy");
+const specialtyStudiedInItAcademy = document.querySelector(
+    "#specialty-studied-it-academy"
+);
+const educationalInstitutionInPac = document.querySelector(
+    "#educational-institution-pac"
+);
+const periodInPac = document.querySelector("#period-pac");
+const specialtyStudiedInPac = document.querySelector("#specialty-studied-pac");
+const educationalInstitutionInBelsut = document.querySelectorAll(
+    ".educational-institution-belsut"
+);
+const periodInMagistracy = document.querySelector("#period-magistracy");
+const specialtyStudiedInMagistracy = document.querySelector(
+    "#specialty-studied-magistracy"
+);
+const periodInBelsut = document.querySelector("#period-belsut");
+const specialtyStudiedInBelsut = document.querySelector(
+    "#specialty-studied-belsut"
+);
+const workExperience = document.querySelector("#work-experience");
+const postInItAcademy = document.querySelector("#post-it-academy");
+const workingPeriodInItAcademy = document.querySelector(
+    "#working-period-it-academy"
+);
+const functionInItAcademy = document.querySelector("#function-it-academy");
+const workplacePreHead = document.querySelector("#workplace-pre-head");
+const postPreHead = document.querySelector("#pre-head");
+const workingPeriodPreHead = document.querySelector("#working-period-pre-head");
+const preHeadFunctions = document.querySelector("#pre-head-functions");
+const skills = document.querySelector("#skills");
+const mySkills = document.querySelectorAll(".skill");
+
+toggle.addEventListener("change", (e) => {
+    if (toggle.checked) {
+        contactData.innerHTML = "Contact data:";
+        phoneNumber.innerHTML = "Phone number:";
+        aboutMe.innerHTML = "About me";
+        aboutMeText.innerHTML = "";
+        for (let i = 0; i < labelText.length; i++) {
+            labelText[1].classList.add("bold");
+            labelText[0].classList.remove("bold");
+            labelText[0].textContent = "Russian";
+        }
+        myName.innerHTML = "Dennis";
+        mySurname.innerHTML = "Kozlovsky";
+        aboutMeText.innerHTML = `Beginning Front-End developer with experience in the banking sector. I can perfectly concentrate on the assigned tasks, I strive to learn new information in the field of development. I am currently working on my own project and learning the Vue javascript framework.`;
+        speciality.innerHTML = "Front-end developer";
+        education.innerHTML = "Education";
+        periodInItAcademy.innerHTML = "march 2022 – september 2022";
+        specialtyStudiedInItAcademy.innerHTML =
+            "Courses: development of websites using HTML, CSS and JavaScript, development of web applications in JavaScript";
+        educationalInstitutionInPac.innerHTML =
+            "Academy of Public Administration under the aegis of the President of the Republic of Belarus";
+        periodInPac.innerHTML = "november 2014 – june 2018";
+        specialtyStudiedInPac.innerHTML = "Specialty: researcher";
+        educationalInstitutionInBelsut.forEach((element) => {
+            element.innerHTML = "Belarusian State University of Transport";
+        });
+        periodInMagistracy.innerHTML = "september 2012 – june 2014";
+        specialtyStudiedInMagistracy.innerHTML = `Specialty: Master of economic science`;
+        periodInBelsut.innerHTML = "september 2007 – june 2012";
+        specialtyStudiedInBelsut.innerHTML =
+            "Specialty: accounting, analysis and audit";
+        workExperience.innerHTML = "Employment experience:";
+        postInItAcademy.innerHTML = "Front-end developer (training)";
+        workingPeriodInItAcademy.innerHTML = "july 2022 – september 2022";
+        functionInItAcademy.innerHTML = `working of my own project (website application for a cafe) adaptive layout of the site with the addition of animation effects, the site has the functionality of an online store, a feedback page, a feedback page, uses Firebase database. Currently the work on improving the project is in progress (adding pagination, improving SEO, connecting TO the payment system)`;
+        workplacePreHead.innerHTML = 'JSC "Belagroprombank"';
+        postPreHead.innerHTML =
+            "- Deputy Head of the Collection and Cash Services Department";
+        workingPeriodPreHead.innerHTML = "july 2019 – february 2022";
+        preHeadFunctions.innerHTML =
+            "organization of work on collection and cash services: THE official duty performance by the department’s employees, concluding  contracts with serviced organizations,   invoicing for  services payment, etc.)";
+        skills.innerHTML = "Skills:";
+        for (let i = 0; i < mySkills.length; i++) {
+            mySkills[0].innerHTML =
+                "High level of knowledge of HTML, CSS, JavaScript, CSS frameworks: Bootstrap, Material Design, working with Firebase database, third-party APIs;";
+            mySkills[1].innerHTML = "Adaptive and cross-browser layout;";
+            mySkills[2].innerHTML = "Testing and debugging websites;";
+            mySkills[3].innerHTML = "Working with Git";
+            mySkills[4].innerHTML =
+                "English proficiency level - intermediate (B1)";
+        }
+        container.animate([{ opacity: "0.2" }, { opacity: "1" }], {
+            duration: 1500,
+            iterations: 1,
+        });
+    } else {
+        contactData.innerHTML = "Контактные данные:";
+        phoneNumber.innerHTML = "Телефон:";
+        aboutMe.innerHTML = "О себе:";
+        aboutMeText.innerHTML = `Начинающий Front-End разработчик с опытом работы в банковской сфере.
+    Отлично умею концентрироваться на поставленных задачах, стремлюсь узучать новую информацию в сфере разработки. 
+    В настоящее время работаю над собственным проектом и изучаю javascript-фреймворк Vue.`;
+        for (let i = 0; i < labelText.length; i++) {
+            labelText[0].classList.add("bold");
+            labelText[1].classList.remove("bold");
+            labelText[0].textContent = "Русский";
+        }
+        myName.innerHTML = "Денис";
+        mySurname.innerHTML = "Козловский";
+        speciality.innerHTML = "Фронтенд разработчик";
+        education.innerHTML = "Образование";
+        periodInItAcademy.innerHTML = "март 2022 – сентябрь 2022";
+        specialtyStudiedInItAcademy.innerHTML =
+            "Курсы: разработка веб-сайтов с использованием HTML, CSS и JavaScript, разработка веб-приложений на JavaScript";
+        educationalInstitutionInPac.innerHTML =
+            "Академия управления при Президенте Республики Беларусь";
+        periodInPac.innerHTML = "ноябрь 2014 – июнь 2018";
+        specialtyStudiedInPac.innerHTML = 'Специальность: молодой исследователь'
+        educationalInstitutionInBelsut.forEach((element) => {
+            element.innerHTML =
+                "Белорусский государственный университет транспорта";
+        });
+        periodInMagistracy.innerHTML = "сенятбрь 2012 – июнь 2014";
+        specialtyStudiedInMagistracy.innerHTML = "Специальность: магистр экономических наук";
+        periodInBelsut.innerHTML = "сентябрь 2007 – июнь 2012";
+        specialtyStudiedInBelsut.innerHTML =
+            "Специальность: бухгалтерский учет, анализ и аудит";
+        workExperience.innerHTML = "Опыт работы:";
+        postInItAcademy.innerHTML = "Frontend-разработчик (обучение)";
+        workingPeriodInItAcademy.innerHTML = "июль 2022 – сентябрь 2022";
+        functionInItAcademy.innerHTML = `разработка своего проекта (сайт – приложение для кафе) адаптивная верстка сайта с добавление анимационных эффектов, сайт имеет функционал интернет-магазина, страницу отзывов, работает с базой данных Firebase. Работа по усовершенствованию проекта продолжается (добавление пагинации, добавление  <meta> для оптимизации SEO, подключение платежной системы)`;
+        workplacePreHead.innerHTML = `ОАО «Белагропромбанк»`;
+        postPreHead.innerHTML =
+            " - заместитель начальника отдела инкассаторско-кассового обслуживания";
+        workingPeriodPreHead.innerHTML = "июль 2019 – февраль 2022";
+        preHeadFunctions.innerHTML =
+            "организация работы по инкассаторско-кассовому обслуживанию: контроль исполнения должностных обязанностей сотрудниками отдела, заключение договоров с обслуживаемыми организациями, выставление счетов для оплаты за обслуживание и др.)";
+        skills.innerHTML = "Навыки:";
+        for (let i = 0; i < mySkills.length; i++) {
+            mySkills[0].innerHTML =
+                "Высокий уровень знания HTML, CSS, JavaScript, CSS-фреймворков: Bootstrap, Material Design, работа с базой данных Firebase, сторонними Api;";
+            mySkills[1].innerHTML = "Адаптивная и кроссбраузерная верстка;";
+            mySkills[2].innerHTML = "Тестирование и отладка веб-сайтов;";
+            mySkills[3].innerHTML = "Работа Git";
+            mySkills[4].innerHTML =
+                "Уровень владения английским языком - средний(В1)";
+        }
+        container.animate([{ opacity: "0.2" }, { opacity: "1" }], {
+            duration: 1500,
+            iterations: 1,
+        });
+    }
+});
+
+</script>
+  </body>
+</html>
